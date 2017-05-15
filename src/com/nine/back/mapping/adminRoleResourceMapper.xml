@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nine.back.mapper.adminRoleResourceMapper">
+  <resultMap id="BaseResultMap" type="com.nine.back.entity.adminRoleResource">
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="ROLECODE" jdbcType="VARCHAR" property="rolecode" />
+    <result column="RESOURCEID" jdbcType="DECIMAL" property="resourceid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, ROLECODE, RESOURCEID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_admin_role_resource
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_admin_role_resource
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.nine.back.entity.adminRoleResource">
+    insert into t_admin_role_resource (ID, ROLECODE, RESOURCEID
+      )
+    values (#{id,jdbcType=INTEGER}, #{rolecode,jdbcType=VARCHAR}, #{resourceid,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.nine.back.entity.adminRoleResource">
+    insert into t_admin_role_resource
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="rolecode != null">
+        ROLECODE,
+      </if>
+      <if test="resourceid != null">
+        RESOURCEID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="rolecode != null">
+        #{rolecode,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceid != null">
+        #{resourceid,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.nine.back.entity.adminRoleResource">
+    update t_admin_role_resource
+    <set>
+      <if test="rolecode != null">
+        ROLECODE = #{rolecode,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceid != null">
+        RESOURCEID = #{resourceid,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.nine.back.entity.adminRoleResource">
+    update t_admin_role_resource
+    set ROLECODE = #{rolecode,jdbcType=VARCHAR},
+      RESOURCEID = #{resourceid,jdbcType=DECIMAL}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.nine.back.entity.adminRoleResource">
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="ROLECODE" jdbcType="VARCHAR" property="rolecode" />
+    <result column="RESOURCEID" jdbcType="DECIMAL" property="resourceid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, ROLECODE, RESOURCEID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_admin_role_resource
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_admin_role_resource
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.nine.back.entity.adminRoleResource">
+    insert into t_admin_role_resource (ID, ROLECODE, RESOURCEID
+      )
+    values (#{id,jdbcType=INTEGER}, #{rolecode,jdbcType=VARCHAR}, #{resourceid,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.nine.back.entity.adminRoleResource">
+    insert into t_admin_role_resource
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="rolecode != null">
+        ROLECODE,
+      </if>
+      <if test="resourceid != null">
+        RESOURCEID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="rolecode != null">
+        #{rolecode,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceid != null">
+        #{resourceid,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.nine.back.entity.adminRoleResource">
+    update t_admin_role_resource
+    <set>
+      <if test="rolecode != null">
+        ROLECODE = #{rolecode,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceid != null">
+        RESOURCEID = #{resourceid,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.nine.back.entity.adminRoleResource">
+    update t_admin_role_resource
+    set ROLECODE = #{rolecode,jdbcType=VARCHAR},
+      RESOURCEID = #{resourceid,jdbcType=DECIMAL}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.nine.back.entity.adminRoleResource">
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="ROLECODE" jdbcType="VARCHAR" property="RoleCode" />
+    <result column="RESOURCEID" jdbcType="DECIMAL" property="ResourceId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, ROLECODE, RESOURCEID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_admin_role_resource
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_admin_role_resource
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.nine.back.entity.adminRoleResource">
+    insert into t_admin_role_resource (ID, ROLECODE, RESOURCEID
+      )
+    values (#{id,jdbcType=INTEGER}, #{RoleCode,jdbcType=VARCHAR}, #{ResourceId,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.nine.back.entity.adminRoleResource">
+    insert into t_admin_role_resource
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="RoleCode != null">
+        ROLECODE,
+      </if>
+      <if test="ResourceId != null">
+        RESOURCEID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="RoleCode != null">
+        #{RoleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ResourceId != null">
+        #{ResourceId,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.nine.back.entity.adminRoleResource">
+    update t_admin_role_resource
+    <set>
+      <if test="RoleCode != null">
+        ROLECODE = #{RoleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="ResourceId != null">
+        RESOURCEID = #{ResourceId,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.nine.back.entity.adminRoleResource">
+    update t_admin_role_resource
+    set ROLECODE = #{RoleCode,jdbcType=VARCHAR},
+      RESOURCEID = #{ResourceId,jdbcType=DECIMAL}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
