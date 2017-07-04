@@ -1,26 +1,30 @@
 ## 后台权限管理
-技术栈：
-* Spring
-* Spring MVC
-* Mybatis
-* Maven
-* MySQL
-* Tomcat
-* Bootstrap
-* JQuery
-* JSON
+| 后端框架和工具  |数据库         | 服务器      |   前端        | 
+| ------------: |:-------------:|-----------:|--------------:|
+| Spring        | MySQL         | Tomcat 8.0 |  Bootstrap    |
+| Spring MVC    |               |            |  JQuery       |
+| Mybatis       |               |            |  JSON         |  
+| Maven         |               |            |               |
 
 ### SmAdmin
 web-back-SSM是一个权限管理系统。web-back-SSM的目标是为用户方便的进行权限分配、角色管理。目前该系统还处于开发阶段，只实现了权限管理、角色管理、菜单管理和用户管理等功能。本项目也是我第一个AfterWork项目，由于时间有限所以开发进度很比较慢。
 
 
-## 目前已经实现的功能有：
+### 目前已经实现的功能有：
 * 权限管理：为不同的角色对应不同的菜单<br>
 * 角色管理：暂时实现了角色的添加、删除、更新。<br>
 * 菜单管理：菜单的CRUD、父菜单的设置、菜单的关闭。<br>
 * 用户管理：用户的CRUD、用户权限的转换。<br>
-## 准备实现的功能有：<br>
+### 准备实现的功能有：<br>
 * 增加基于Bootstrap的前端页面，开发中
 * 为角色添加菜单组的功能 2017年8月前
 * 登陆用户记录  2017年9月前
 * 登陆用户报表  2017年11月前。
+
+
+## 接口文档
+|action         | url          | requestData  |
+| ------------- |:-------------:| ------------:|
+| login         | /user/login   | username,password |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
