@@ -53,4 +53,8 @@ public class RoleManageService {
 		return adminRoleResourceMapper.getAllResourceId(roleCode);
 	}
 	
+	public List<AdminRole> getAllAdminRole(){
+		return adminRoleMapper.selectAllAdminRole();
+	}
+	
 }

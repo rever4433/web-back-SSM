@@ -2,6 +2,7 @@ package com.nine.back.strategy;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,6 +11,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.nine.back.common.Code;
 import com.nine.back.common.MsgConstants;
 import com.nine.back.common.ParamConstants;
+import com.nine.back.controller.UserController;
 import com.nine.back.entity.AdminResource;
 import com.nine.back.entity.AdminUser;
 import com.nine.back.service.MenuService;
@@ -24,19 +26,21 @@ public class LoginStrategy  {
 	@Autowired
 	private MenuService menuService;
 
+	 private static Logger log = Logger.getLogger(LoginStrategy.class);  
 
 	/*
 	 * Author: gaoyakang desc:登录
-	 * json格式:{"username":#{username},"password":#{password}}
+	 * json格式:{"username":#{username},"password":#{password},"userid":100001}
 	 */
 
 	public Object doApply(String data) {
+		log.info(data);
 		JSONObject jsonObject = JSONObject.parseObject(data);
 		String userName = jsonObject.getString(ParamConstants.USERNAME);
 		String password = jsonObject.getString(ParamConstants.PASSWORD);
-		Integer userid = userService.getUserIdByUserName(userName);
+		Integer userid = jsonObject.getInteger(ParamConstants.USER_ID);
 		AdminUser user = userService.getAdminUserById(userid);
-		JSONObject result=null;
+		JSONObject result=new JSONObject();
 		if (user == null) {
 		//	object.put(Code.USER_NOT_EXISTED, MsgConstants.USER_NOT_EXISTED);
 			result=ResultBuildUtil.buildResult(Code.USER_NOT_EXISTED,MsgConstants.USER_NOT_EXISTED);
@@ -57,13 +61,16 @@ public class LoginStrategy  {
 					array.add(o);
 				}
 			}
+			
+			System.out.println(userName);
 			result=ResultBuildUtil.buildSuccessResult(MsgConstants.SUCCESS);
 			result.put(ParamConstants.MENU_ARRAY, array);
+			result.put(ParamConstants.USERNAME, userName);
 			
 		} else {
 			result=ResultBuildUtil.buildResult(Code.PASSWORD_INCORRECT,MsgConstants.PASSWORD_INCORRECT);
 		}
-
+		log.info(result.toJSONString());
 		return result;
 	}
 }

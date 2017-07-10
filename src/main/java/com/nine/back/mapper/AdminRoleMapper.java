@@ -84,4 +84,6 @@ public interface AdminRoleMapper {
 
 	@Select("select ROLECODE from t_admin_role where ROLENAME=#{rolename}")
 	String getRoleCodeByRoleName(String rolename);
+	
+	
 }
