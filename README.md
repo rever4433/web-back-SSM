@@ -301,7 +301,8 @@ CREATE TABLE T_ADMIN_RESOURCES
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8 COMMENT='资源表';
 ```
 
-
+## 展示
+![](https://github.com/rever4433/web-back-ssm/raw/master/img/demo1.png or demo1.jpg)
 
 ## TO DO List
 
